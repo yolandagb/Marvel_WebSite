@@ -22,12 +22,26 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         const controlatedError = new ControlatedError();
 
         switch (error.status) {
+
+          case 400:
+            controlatedError.message = 'Peticion denegada';
+            controlatedError.title = 'Bad Request';
+            break;
+
           case 401:
             controlatedError.message = 'No autenticado';
             controlatedError.title = 'Unauthorized';
             break;
 
+          case 404:
+            controlatedError.message = 'No se ha encontrado el recurso soliciado';
+            controlatedError.title = 'Not found';
+            break;
+
+
           default:
+            controlatedError.message = 'Error no identificado';
+            controlatedError.title = 'Algo está mal';
             break;
         }
 
