@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     HttpClientModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'es_ES' }
+  providers: [{provide: LOCALE_ID, useValue: 'es' }
 ],
   bootstrap: [AppComponent]
 })

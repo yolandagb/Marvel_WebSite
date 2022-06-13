@@ -15,7 +15,8 @@
   <p> <b>ISBN:</b>   {{comic.isbn}}</p>
   <p><b>NUMERO DE PAGINAS:</b>   {{comic.pageCount}}</p>
   <p><b>CREADORES:</b></p>
-  <p *ngFor="let creator of comic.creators">      \ \ \ \ \    {{creator.name}} ({{creator.role}})</p>
+  <!-- <p *ngFor="let creator of comic.creators">      \ \ \ \ \    {{creator.name}} ({{creator.role}})</p> -->
+  <p><b>CREADORES:</b> {{comic.creators | creators}}</p>
   <p><b>FECHA DE SALIDA:    </b>{{comic.onsaleDate | date: 'shortDate' }}</p>
 
 
