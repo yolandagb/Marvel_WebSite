@@ -1,0 +1,46 @@
+<div class="search-wrapper">
+  <form [formGroup]="searchForm" (ngSubmit)="submit()">
+    <div class="group" id="name">
+      <input type="text" formControlName="titleStartsWith" /><span class="highlight"></span
+      ><span class="bar"></span>
+      <label>Buscar por título</label>
+      <div
+        *ngIf="titleStartsWith && titleStartsWith.invalid && (titleStartsWith.dirty || titleStartsWith.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="titleStartsWith.errors?.['minlength']">
+          Has introducido {{titleStartsWith.errors?.['minlength'].actualLength}} y el mínimo son
+          {{titleStartsWith.errors?.['minlength'].requiredLength}}
+        </div>
+      </div>
+    </div>
+
+    <div class="group" id="year">
+      <input type="number" formControlName="startYear" /><span
+        class="highlight"
+      ></span
+      ><span class="bar"></span>
+      <label>Año</label>
+      <div
+        *ngIf="startYear && startYear.invalid && (startYear.dirty || startYear.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="startYear.errors?.['min']">
+          Has introducido {{startYear.errors?.['min'].actualLength}} y el mínimo son
+          {{startYear.errors?.['min'].requiredLength}}
+        </div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <button
+        class="btn btn-submit"
+        type="submit"
+        [disabled]="
+          searchForm.invalid && (searchForm.dirty || searchForm.touched)
+        "
+      >
+        Buscar
+      </button>
+    </div>
+  </form>
+</div>

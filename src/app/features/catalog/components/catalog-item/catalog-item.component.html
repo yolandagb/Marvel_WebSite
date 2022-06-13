@@ -1,0 +1,27 @@
+<a routerLink="/catalog/detail" (click)="comicClicked()">
+<div class="card">
+  <img
+    [src]="comic.images[0].path + '/portrait_fantastic.' + comic.images[0].extension"
+    alt="Portada"
+    style="width: 100%"
+    *ngIf="
+      comic.images && comic.images.length > 0 && comic.images[0].path;
+      else noImage
+    "
+  />
+  <div class="container">
+    <h4>
+      <b>{{ comic.title }}</b>
+    </h4>
+    <p>{{ comic.description }}</p>
+  </div>
+</div>
+
+<ng-template #noImage>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/0/0a/No-image-available.png"
+    alt="Sin Portada"
+    style="width: 100%"
+  />
+</ng-template>
+</a>

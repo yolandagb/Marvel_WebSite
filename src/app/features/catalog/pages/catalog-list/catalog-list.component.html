@@ -1,0 +1,14 @@
+<cm-search-form (searchChange)="search($event)"></cm-search-form>
+<div class="items-container">
+  <cm-catalog-item *ngFor="let item of comics" [comic]="item"></cm-catalog-item>
+</div>
+
+<br />
+
+<cm-pagination
+  [(page)]="page"
+  [totalPages]="(catalogService.pagination$ | async)?.totalPages ?? 0"
+  (pageChange)="changePage()"
+  *ngIf="totalPages > 1"
+></cm-pagination>
+<cm-loader *ngIf="catalogService.loading$ | async"></cm-loader>

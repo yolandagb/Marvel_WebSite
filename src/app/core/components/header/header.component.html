@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let item of menuElements">
+    <a [routerLink]="item.path" routerLinkActive="active">{{item.title}}</a>
+  </li>
+  <li style="float:right"><a (click)="rightElementClick()">Logout</a></li>
+</ul>
