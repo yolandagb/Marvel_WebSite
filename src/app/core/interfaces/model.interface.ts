@@ -1,4 +1,4 @@
 export interface Model {
-  id: number;
+  id: number | undefined;
   serialize: () => { [key: string]: any };
 }

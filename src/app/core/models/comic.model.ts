@@ -3,7 +3,7 @@ import { Model } from '@core/interfaces/model.interface';
 import { Creator } from '@core/models/creator.model';
 
 export class Comic implements Model {
-  private _id!: number;
+  private _id?: number;
   private _title!: string;
   private _description!: string;
   private _isbn!: string;
@@ -12,10 +12,10 @@ export class Comic implements Model {
   private _creators!: Creator[];
   private _onsaleDate!: Date;
 
-  public get id(): number {
+  public get id(): number | undefined {
     return this._id;
   }
-  public set id(value: number) {
+  public set id(value: number | undefined) {
     this._id = value;
   }
   public get title(): string {

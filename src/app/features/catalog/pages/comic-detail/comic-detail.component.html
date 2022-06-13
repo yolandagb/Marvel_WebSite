@@ -1,10 +1,15 @@
+<br>
+<br>
+<br>
+<div>
+<button routerLink="/catalog" class="rainbow-button"> Atrás </button>
 
 <h1>{{comic.title}}</h1>
 
 <img
     [src]="comic.images[0].path + '/portrait_fantastic.' + comic.images[0].extension"
     alt="Portada"
-    style="width: 20%"
+    style="width: 23%"
     *ngIf="
       comic.images && comic.images.length > 0 && comic.images[0].path;
       else noImage
@@ -13,11 +18,12 @@
 
   <p> <b>DESCRIPCION:</b>   {{comic.description}}</p>
   <p> <b>ISBN:</b>   {{comic.isbn}}</p>
-  <p><b>NUMERO DE PAGINAS:</b>   {{comic.pageCount}}</p>
-  <p><b>CREADORES:</b></p>
+  <p>NUMERO DE PAGINAS:   {{comic.pageCount}}</p>
   <!-- <p *ngFor="let creator of comic.creators">      \ \ \ \ \    {{creator.name}} ({{creator.role}})</p> -->
   <p><b>CREADORES:</b> {{comic.creators | creators}}</p>
   <p><b>FECHA DE SALIDA:    </b>{{comic.onsaleDate | date: 'shortDate' }}</p>
+
+  <button (click)="addToCollection()" class="rainbow-button"> Añadir a la colección </button>
 
 
   <ng-template #noImage>
@@ -27,3 +33,4 @@
       style="width: 100%"
     />
   </ng-template>
+</div>

@@ -10,6 +10,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ComicApiService implements ApiService<Comic>{
+  readonly url: string = `${environment.api_server}/v1/public/comics`;
 
   constructor(private http: HttpClient) { }
 

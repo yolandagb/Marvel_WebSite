@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pagination } from '@core/interfaces/pagination.interface';
 import { Comic } from '@core/models/comic.model';
+import { CollectionApiService } from '@core/services/collection-api.service';
 import { ComicApiService } from '@core/services/comic-api.service';
 import { ComicStateService } from '@core/services/comic-state.service';
 import { Observable } from 'rxjs';
@@ -11,7 +12,8 @@ import { Observable } from 'rxjs';
 export class CatalogService {
   constructor(
     private comicApi: ComicApiService,
-    private comicState: ComicStateService
+    private comicState: ComicStateService,
+    private collectionApi: CollectionApiService
   ) {}
 
   get comics$(): Observable<Comic[] | null> {
@@ -46,5 +48,10 @@ export class CatalogService {
       });
       this.comicState.setLoading(false);
     });
+  }
+
+  addToCollection(comic:Comic){
+    comic.id = undefined;
+    this.collectionApi.add(comic).subscribe(resp => console.log(resp));
   }
 }
