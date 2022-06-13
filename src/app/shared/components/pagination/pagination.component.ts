@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @Component({
   selector: 'cm-pagination',

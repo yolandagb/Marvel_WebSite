@@ -2,9 +2,7 @@
 <div class="items-container">
   <cm-catalog-item *ngFor="let item of comics" [comic]="item"></cm-catalog-item>
 </div>
-
-<br />
-
+<br/>
 <cm-pagination
   [(page)]="page"
   [totalPages]="(catalogService.pagination$ | async)?.totalPages ?? 0"

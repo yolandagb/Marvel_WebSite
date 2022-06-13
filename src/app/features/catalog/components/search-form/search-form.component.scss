@@ -1,5 +1,5 @@
 $bg-color: #424242;
-$hl-color: #2196F3;
+$hl-color: #363b3f;
 $muted-color: mix(white, $bg-color, 70%);
 $trans-time: 300ms;
 $width: 100%;
@@ -9,9 +9,11 @@ $width: 100%;
 .search-wrapper {
   form {
     width: 100%;
-    margin: 45px auto;
+    margin: 30px auto;
     display: flex;
     justify-content: space-between;
+    border-radius: 60px;
+    height: 120px;
 
     .group {
       position: relative;
@@ -20,7 +22,9 @@ $width: 100%;
 
       // INPUTS // ============================== //
       &#name {
-        width: 70%;
+        width: 40%;
+        margin-left: 40px;
+
       }
 
       &#year {
@@ -45,8 +49,8 @@ $width: 100%;
         &:focus~label,
         &:valid~label {
           top: -14px;
-          font-size: 12px;
-          color: $hl-color;
+          font-size: 23px;
+          color: black;
         }
 
         &:focus~.bar:before {
@@ -91,7 +95,8 @@ $width: 100%;
     color: mix(black, $muted-color, 25%);
     border: none;
     padding: 10px 20px;
-    border-radius: 3px;
+    margin-right: 35px;
+    border-radius: 20px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     text-decoration: none;
