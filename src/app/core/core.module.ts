@@ -6,7 +6,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { HttpErrorInterceptor } from './interceptor/http-error.interceptor';
 import { CustomErrorHandler } from './handler/custom-error.andler';
-import { NotFoundPageComponent } from './components/header/not-found-page/not-found-page.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+
 
 @NgModule({
   declarations: [HeaderComponent, NotFoundPageComponent],
